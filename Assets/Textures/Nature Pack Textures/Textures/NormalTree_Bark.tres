@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dg8d34q3qqxsa"]
+
+[ext_resource type="Texture2D" uid="uid://gdx2hx0tj6mq" path="res://Assets/Textures/Nature Pack Textures/Textures/NormalTree_Bark.png" id="1_fo05f"]
+[ext_resource type="Texture2D" uid="uid://c3mc7tcpu34cf" path="res://Assets/Textures/Nature Pack Textures/Textures/NormalTree_Bark_Normal.png" id="2_c1g8p"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_fo05f")
+normal_enabled = true
+normal_texture = ExtResource("2_c1g8p")

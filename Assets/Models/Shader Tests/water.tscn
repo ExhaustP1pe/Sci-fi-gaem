@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdlaq4qw5ycy0"]
+
+[ext_resource type="Shader" uid="uid://csxa5tbipqul" path="res://Shaders/water.tres" id="1_tg4mf"]
+[ext_resource type="PackedScene" uid="uid://dxg2wy7udec0i" path="res://Assets/Models/Nature pack/Rock_4.gltf" id="2_vwqh5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6htpa"]
+render_priority = 0
+shader = ExtResource("1_tg4mf")
+shader_parameter/ColorParameter = Color(0.120615, 0.562404, 0.865895, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i74rw"]
+material = SubResource("ShaderMaterial_6htpa")
+size = Vector2(10, 10)
+subdivide_width = 20
+subdivide_depth = 20
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jte5r"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jlrwo"]
+radius = 1.0
+height = 2.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_i74rw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.649236, 0.760587, 0, -0.760587, 0.649236, 0, 0, 0, 1, 0.0202789, -0.32594, 0)
+mesh = SubResource("CylinderMesh_jte5r")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, -2.30224, 0, 1.7326)
+mesh = SubResource("SphereMesh_jlrwo")
+
+[node name="Rock_4" parent="." instance=ExtResource("2_vwqh5")]
+transform = Transform3D(0.929107, 0.210202, 0.304262, 0, 0.82275, -0.568404, -0.369812, 0.528108, 0.764422, -0.271166, -0.642329, -1.05309)

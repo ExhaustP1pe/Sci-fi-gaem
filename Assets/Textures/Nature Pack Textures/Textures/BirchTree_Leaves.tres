@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://rmlu46o5xvna"]
+
+[ext_resource type="Texture2D" uid="uid://by4bhlutqnvvj" path="res://Assets/Textures/Nature Pack Textures/Textures/BirchTree_Leaves.png" id="1_ydmvh"]
+[ext_resource type="Texture2D" uid="uid://popu15w3fgwi" path="res://Assets/Textures/Nature Pack Textures/Textures/Leaves_BW.png" id="2_b4j8q"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_ydmvh")
+backlight_texture = ExtResource("2_b4j8q")
+detail_mask = ExtResource("1_ydmvh")
+detail_albedo = ExtResource("1_ydmvh")
+billboard_keep_scale = true
+proximity_fade_distance = 4.53

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ctg0c1if106hv"]
+
+[ext_resource type="Texture2D" uid="uid://fswqmmej4f15" path="res://Assets/Textures/kenney_prototype-textures/PNG/Red/texture_07.png" id="1_afx5j"]
+
+[resource]
+albedo_texture = ExtResource("1_afx5j")
