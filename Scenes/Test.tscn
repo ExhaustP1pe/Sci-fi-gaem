@@ -166,4 +166,3 @@ materials = Array[Material]([ExtResource("7_dctl5")])
 block_data = SubResource("Resource_hnl3e")
 
 [node name="player" parent="." instance=ExtResource("8_y4mgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74014, 0, -0.265651)
