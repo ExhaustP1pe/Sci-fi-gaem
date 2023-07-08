@@ -14,6 +14,7 @@ operator = 5
 constant = 0.8
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_m0lm3"]
+constant = 1.0
 
 [sub_resource type="VisualShaderNodeProximityFade" id="VisualShaderNodeProximityFade_x40y8"]
 
@@ -279,7 +280,7 @@ void fragment() {
 
 
 // FloatConstant:13
-	float n_out13p0 = 0.000000;
+	float n_out13p0 = 1.000000;
 
 
 // Output:0
@@ -291,7 +292,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-494.599, -171.529)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_03nec")
 nodes/vertex/2/position = Vector2(-780, 220)
 nodes/vertex/3/node = SubResource("VisualShaderNodeUVFunc_1pt4k")
