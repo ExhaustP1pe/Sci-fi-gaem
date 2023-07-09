@@ -12,7 +12,7 @@ config_version=5
 
 config/name="cool sci-fi Gaem"
 config/tags=PackedStringArray("adventure", "third_person", "active")
-run/main_scene="res://Scenes/Orange.tscn"
+run/main_scene="res://Scenes/Test.tscn"
 config/features=PackedStringArray("4.1")
 config/icon="res://icon.png"
 
