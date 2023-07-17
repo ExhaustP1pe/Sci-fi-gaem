@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://xyd7q5yk5cm5" path="res://Assets/Textures/kenney_prototype-textures/PNG/Dark/D9.tres" id="5_f7p16"]
 [ext_resource type="Material" uid="uid://dc4bbvc24ge3d" path="res://Assets/Textures/kenney_prototype-textures/PNG/Green/G10.tres" id="6_q3ub2"]
 [ext_resource type="Material" uid="uid://c3ihieceauuli" path="res://Assets/Textures/kenney_prototype-textures/PNG/Green/G9.tres" id="7_dctl5"]
-[ext_resource type="PackedScene" uid="uid://bcpdo65u25dq2" path="res://Scenes/player.tscn" id="8_y4mgx"]
+[ext_resource type="PackedScene" uid="uid://bcpdo65u25dq2" path="res://Player/player.tscn" id="8_y4mgx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a3hfb"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

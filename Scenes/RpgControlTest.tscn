@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://3f1i6x8bd5od"]
+
+[ext_resource type="Material" uid="uid://dvulh3m8ya402" path="res://Assets/Textures/kenney_prototype-textures/PNG/Dark/D3.tres" id="1_byu22"]
+[ext_resource type="Material" uid="uid://dmcccb3l36eky" path="res://Assets/Textures/kenney_prototype-textures/PNG/Purple/P10.tres" id="2_p540j"]
+[ext_resource type="PackedScene" uid="uid://mw5ym3xccvhy" path="res://Player/RPGplayer.tscn" id="3_v5f5b"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kqn0k"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_25mjx"]
+sky_material = SubResource("ProceduralSkyMaterial_kqn0k")
+
+[sub_resource type="Environment" id="Environment_nvt03"]
+background_mode = 1
+sky = SubResource("Sky_25mjx")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="Gradient" id="Gradient_xcnyl"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j1nnx"]
+noise_type = 0
+seed = 3
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_weg8f"]
+color_ramp = SubResource("Gradient_xcnyl")
+noise = SubResource("FastNoiseLite_j1nnx")
+
+[sub_resource type="FogMaterial" id="FogMaterial_xafwq"]
+density = 1.6486
+albedo = Color(0.454902, 0.439216, 0.909804, 1)
+density_texture = SubResource("NoiseTexture3D_weg8f")
+
+[node name="world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nvt03")
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("1_byu22")
+use_collision = true
+size = Vector3(10, 1, 10)
+
+[node name="wall6" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55926, 1.27475, 0)
+material_override = ExtResource("2_p540j")
+use_collision = true
+size = Vector3(1, 2.60059, 9.90432)
+
+[node name="wall5" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50481, 1.27475, 0)
+material_override = ExtResource("2_p540j")
+use_collision = true
+size = Vector3(1, 2.60059, 9.90432)
+
+[node name="wall4" type="CSGBox3D" parent="map"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0272241, 1.27475, 4.53203)
+material_override = ExtResource("2_p540j")
+use_collision = true
+size = Vector3(1, 2.60059, 8.0926)
+
+[node name="wall3" type="CSGBox3D" parent="map"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0272245, 1.27475, -4.53203)
+material_override = ExtResource("2_p540j")
+use_collision = true
+size = Vector3(1, 2.60059, 8.06278)
+
+[node name="wall2" type="CSGBox3D" parent="map"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.06605, 1.27475, 0.467968)
+material_override = ExtResource("2_p540j")
+use_collision = true
+size = Vector3(1, 2.60059, 4)
+
+[node name="wall" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.527328, 1.27475, -3.04535)
+material_override = ExtResource("2_p540j")
+use_collision = true
+size = Vector3(1, 2.60059, 2)
+
+[node name="FogVolume" type="FogVolume" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.049016, 0)
+size = Vector3(9.97741, 1.70785, 10.0157)
+material = SubResource("FogMaterial_xafwq")
+
+[node name="RPGplayer" parent="." instance=ExtResource("3_v5f5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05124, 0, 1.49777)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.776646, 0.290677, -0.558863, -0.0281897, 0.902321, 0.430142, 0.629306, -0.318314, 0.708978, -4.24246, 4.71117, 4.64482)

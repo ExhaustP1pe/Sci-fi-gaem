@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://cywi2u52q5526"]
 
 [ext_resource type="Shader" uid="uid://ck1xadds4k6rf" path="res://Shaders/Grass.tres" id="1_mm8hx"]
-[ext_resource type="PackedScene" uid="uid://be8mdkpt467wa" path="res://Assets/Models/grass.glb" id="2_fo17q"]
-[ext_resource type="PackedScene" uid="uid://bcpdo65u25dq2" path="res://Scenes/player.tscn" id="3_qeieo"]
+[ext_resource type="PackedScene" uid="uid://be8mdkpt467wa" path="res://Assets/Models/Foliage Meshes/grass.glb" id="2_fo17q"]
+[ext_resource type="PackedScene" uid="uid://bcpdo65u25dq2" path="res://Player/player.tscn" id="3_qeieo"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kriog"]
 fractal_type = 0
