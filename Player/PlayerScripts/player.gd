@@ -37,13 +37,21 @@ func _camera_movement(event: InputEvent) -> void:
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("Attack") and is_on_floor():
-		if animation_player.current_animation == "Attack": return
+		if animation_player.current_animation == "Attack" or animation_player.current_animation == "Block": return
 		is_locked = true
 		animation_player.play("Attack")
 		await get_tree().create_timer(.9,false).timeout
 		_hitbox.show()
 		_hitbox.monitoring = true
-	
+		
+	if Input.is_action_just_pressed("Block") and is_on_floor():
+		if animation_player.current_animation == "Block": return
+		animation_player.play("Block")
+		is_locked = true
+	elif Input.is_action_just_released("Block") and is_on_floor():
+		animation_player.play("idle")
+		is_locked = false
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
