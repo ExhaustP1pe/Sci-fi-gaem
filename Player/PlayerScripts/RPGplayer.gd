@@ -1,8 +1,10 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
+
+@onready var camera_point = $camera_point
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -12,6 +14,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var walking = false
 
+func _ready():
+	GameManager.set_player(self)
+	animation_player.set_blend_time("idle","walk",0.2)
+	animation_player.set_blend_time("walk","idle",0.2)
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -20,7 +27,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		animation_player.play("walk")
+		animation_player.play("jump")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

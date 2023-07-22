@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://cy163kcmylsjf"
+path="res://.godot/imported/yah.dialogue-f95cdce7758547aa766507aae267081e.tres"
+
+[deps]
+
+source_file="res://dialogue/yah.dialogue"
+dest_files=["res://.godot/imported/yah.dialogue-f95cdce7758547aa766507aae267081e.tres"]
+
+[params]
+
+defaults=true
