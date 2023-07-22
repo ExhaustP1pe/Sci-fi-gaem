@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dad7drcjg5gm6"]
+[gd_scene load_steps=81 format=3 uid="uid://dad7drcjg5gm6"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_ovrgr"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_vap08"]
@@ -1187,6 +1187,10 @@ size = Vector2(4, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nlu6p"]
 size = Vector3(4, 6, 4)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ew3mi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k8h2x"]
+
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -1509,3 +1513,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.46483, 0.753971, -9.48588)
 shape = SubResource("BoxShape3D_nlu6p")
 
 [node name="player" parent="." instance=ExtResource("8_y4mgx")]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.4976)
+collision_layer = 4
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_ew3mi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_k8h2x")
