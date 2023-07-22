@@ -287,11 +287,11 @@ void fragment() {
 	ALBEDO = n_out26p0;
 	ALPHA = n_out12p0;
 	ROUGHNESS = n_out13p0;
-	EMISSION = vec3(n_out11p0.xyz);
 
 
 }
 "
+graph_offset = Vector2(-436.966, -24.0692)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_03nec")
 nodes/vertex/2/position = Vector2(-780, 220)
 nodes/vertex/3/node = SubResource("VisualShaderNodeUVFunc_1pt4k")
@@ -354,4 +354,4 @@ nodes/fragment/25/node = SubResource("VisualShaderNodeMultiplyAdd_1rba7")
 nodes/fragment/25/position = Vector2(-1300, -680)
 nodes/fragment/26/node = SubResource("VisualShaderNodeMix_x8ai7")
 nodes/fragment/26/position = Vector2(160, -340)
-nodes/fragment/connections = PackedInt32Array(2, 0, 4, 0, 6, 0, 5, 2, 8, 0, 7, 0, 9, 0, 8, 2, 5, 0, 3, 0, 3, 0, 10, 0, 7, 0, 10, 1, 10, 0, 11, 0, 11, 0, 4, 1, 12, 0, 0, 1, 13, 0, 0, 3, 14, 0, 15, 0, 17, 0, 20, 0, 15, 0, 21, 1, 20, 0, 21, 0, 15, 0, 22, 0, 21, 0, 23, 0, 22, 0, 23, 1, 24, 0, 17, 0, 18, 0, 25, 0, 15, 0, 25, 2, 25, 0, 24, 0, 23, 0, 26, 2, 26, 0, 0, 0, 11, 0, 0, 5, 4, 0, 26, 0)
+nodes/fragment/connections = PackedInt32Array(2, 0, 4, 0, 6, 0, 5, 2, 8, 0, 7, 0, 9, 0, 8, 2, 5, 0, 3, 0, 3, 0, 10, 0, 7, 0, 10, 1, 10, 0, 11, 0, 11, 0, 4, 1, 12, 0, 0, 1, 13, 0, 0, 3, 14, 0, 15, 0, 17, 0, 20, 0, 15, 0, 21, 1, 20, 0, 21, 0, 15, 0, 22, 0, 21, 0, 23, 0, 22, 0, 23, 1, 24, 0, 17, 0, 18, 0, 25, 0, 15, 0, 25, 2, 25, 0, 24, 0, 23, 0, 26, 2, 26, 0, 0, 0, 4, 0, 26, 0)
