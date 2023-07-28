@@ -1513,9 +1513,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.46483, 0.753971, -9.48588)
 shape = SubResource("BoxShape3D_nlu6p")
 
 [node name="player" parent="." instance=ExtResource("8_y4mgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125885, 3.24304, -0.0260568)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.4976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.83623)
 collision_layer = 4
 collision_mask = 3
 
@@ -1523,4 +1524,26 @@ collision_mask = 3
 mesh = SubResource("CapsuleMesh_ew3mi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_k8h2x")
+
+[node name="CharacterBody3D2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02308, 1, -3.85867)
+collision_layer = 4
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D2"]
+mesh = SubResource("CapsuleMesh_ew3mi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D2"]
+shape = SubResource("CapsuleShape3D_k8h2x")
+
+[node name="CharacterBody3D3" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02308, 1, -3.85867)
+collision_layer = 4
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D3"]
+mesh = SubResource("CapsuleMesh_ew3mi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D3"]
 shape = SubResource("CapsuleShape3D_k8h2x")
