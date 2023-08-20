@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0ve2vy8016sp"]
+
+[ext_resource type="Script" path="res://entities/Enemy/Enemy.gd" id="1_hsfid"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ew3mi"]
+radius = 0.335
+height = 1.975
+
+[sub_resource type="BoxMesh" id="BoxMesh_vqghl"]
+size = Vector3(0.425, 0.175, 0.705)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k8h2x"]
+radius = 0.34563
+height = 1.92542
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kkduk"]
+radius = 0.789109
+
+[node name="enemy" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_hsfid")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ew3mi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65552, -0.466116)
+mesh = SubResource("BoxMesh_vqghl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_k8h2x")
+
+[node name="agent" type="NavigationAgent3D" parent="."]
+path_height_offset = -1.0
+
+[node name="cooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.644068)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox"]
+transform = Transform3D(1, 0, 0, 5.96046e-08, 1, 0, -1.49012e-07, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_kkduk")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]

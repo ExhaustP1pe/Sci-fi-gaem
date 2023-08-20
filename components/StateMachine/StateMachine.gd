@@ -28,13 +28,11 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	if not has_node(target_state_name): #If there is no state with the name
 		printerr("Doesn't exit this state: ", target_state_name) #Print an error
 		return #Return
-	if _animation_player.is_connected("animation_finished", state.end_animation): #If the animation_player is already connected to the state
-		_animation_player.disconnect("animation_finished", state.end_animation) #Disconnect it
 	state.before_exit() #Exit the state
 	state = get_node(target_state_name) #Get the next state 
 	state.before_enter(msg) #Enter it
-	if _animation_player.current_animation != target_state_name:
-		_animation_player.play(target_state_name) #Play the animation
-		if state.has_method("end_animation"): #If the state has the method "end_animation"
-			_animation_player.connect("animation_finished", state.end_animation) #Connect the animation_player to it
+	_animation_player.play(target_state_name)
 	emit_signal("transitioned", state.name) #Emit a signal
+
+func get_animation_player() -> AnimationPlayer:
+	return _animation_player
