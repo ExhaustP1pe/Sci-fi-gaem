@@ -1523,3 +1523,4 @@ sens_vertical = 1.0
 [node name="enemy" parent="." instance=ExtResource("15_leml5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77411, 1.61915, -7.62247)
 _enemy_speed = 2.0
+_enemy_vision_range = 103.0
